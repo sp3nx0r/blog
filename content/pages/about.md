@@ -1,0 +1,51 @@
+---
+title: "About Me"
+date: 2025-05-25
+tags: []
+type: "page"
+url: "/about"
+draft: false
+showToc: true
+---
+
+<!-- spellchecker: ignore sp3nx0r Peoplesoft SIEM wifey geolocation CISO appsec ciphersuite Devvit Redditors Snoos Doxxing bruh Neuromancer securimancy securimancer Auch gatekeep -->
+
+My name is **Spencer**, `sp3nx0r`, or the *Securimancer*, and I'm a builder turned breaker turned back builder. Been in the security industry for almost 20 years (wow, I'm old) and racked up all the possible titles. Now I'm just trying to make the world a better place...
+
+## My Journey
+
+### Schooling and Early Days
+
+I came out of the University of Illinois at Urbana-Champaign with a BS degree in General Engineering. It's no longer called that, but instead has morphed into "Systems Engineering and Design", which makes sense as I thought (as did a lot of people as the top answer in their [name change FAQ](https://ise.illinois.edu/undergraduate/systems-engineering-and-design-degree/name-change-faq)) that this was the undecided engineer. I liked computers, grew up tinkering with our family's early DOS and Win3.1 home computers. My dad was a software engineer at E-Systems turned Raytheon, seemed like a fine career. I didn't much care for physical things in the land of Electrical Engineering, but I sure did love software. So I took CompSci and Computer Engineering classes along with legal, business, and the weed out courses of the other engineering disciplines.
+
+### Life of a Management Consultant
+
+So with that background, I started at Deloitte. Didn't know what exactly I'd be doing, but was super eager to learn. The partner I reported in to did SAP and Peoplesoft security implementations, so I quickly found out what I would be doing. I stuck with Deloitte for almost 9 years, and actually I really enjoyed it. I was young and got to experience the world through different lenses: different geographies, different industries, different company styles, all while doing SAP security implementations. I did Walmart's UK and US financial system implementation, and 3M's Taiwan and US implementation. Massive projects that required a bunch of coordination and planning and management. Felt like I got my PMP because I was the one often planning, forecasting, and reporting on the work that I was doing. Felt like I *also* got my MBA because you can't really secure a system without knowing how the thing worked, and these were financial and back-office systems that exposed me to AP/AR/GL and P2P and Materials Management and a whole slew of other terms that I still find use of today.
+
+### Becoming an IT Security Generalist
+
+Eventually I got tired of traveling out every Monday and back every Thursday as I'd found someone that I wanted to be around more often than just the weekends (who'd later turn into wifey). I found what I'd hoped was a cush gig as an IT Security manager for a retail energy company in Houston. Thought I'd write some IT policies and managed some vendors - easy stuff. Turns out that was the further thing from reality. This is where I picked up penetration testing, self-taught, and got deep into systems administration. Ran the vulnerability management and hardening program with IBM, built out a SOC and revamped an aging SIEM, dealt with endpoint and all the traditional security technologies back in the 2010s, all while having a relatively small and scrappy team. It was a lot of fun, met a lot of people who taught me a whole bunch and built a camaraderie with.
+
+### Developing IT Security Leadership
+
+Just when I thought I had things relatively under control, our UK parent company Centrica decided that we should globalize and consolidate, so now my little North American scope of 3,000 employees with a few lines of business turned into a global 36 business unit hot mess. I was the most senior NA security leader at that time, and also tasked with doing offensive security for the entire company. Learned a lot about running a global, geolocation-diverse team with a slew of managed service providers and a *TON* of bureaucracy. Dealt with a lot of change, and was exposed to even more fun things like Operational Technology (OT) for natural gas reserves and power generation, and Internet of Things (IoT) for the Hive thermostat and smart *everything* that dealt with electricity. All this while the parent company was trying to figure out how to be profitable. I wrapped up this chapter when I came back from holiday break and the global CISO told me there'd be no money for next year -- I wasn't interested in running a skeleton crew, so I started looking.
+
+### Life at Reddit
+
+I applied at Reddit among other places in 2019. Had the hardest interview of my life doing a secure coding challenge with one of the most brilliant engineers I've ever met [Jordan Milne](https://jordanmilne.com/), and swore I wasn't going to get the job. Turns out I must not have been that terrible, and I was brought on as Reddit's second appsec engineer. The imposter syndrome was real, and I had to learn a lot about new Reddit-sized tech stacks (like bare metal Kubernetes in AWS) and how to handle Reddit-sized RPS (security products based on RPS or client counts get pretty expensive pretty fast). I turned [Reddit's bug bounty program public](https://www.hackerone.com/blog/reddits-bug-bounty-program-kicks-qa-reddits-allison-miller-and-spencer-koch-and-top-program), kept expanding security capabilities and worked closely with several teams to ship features to make the platform more secure. Refactored Reddit's old OAuth system after getting called out in [OAuch paper](https://lirias.kuleuven.be/3765111?limo=0), [modernized our ciphersuite stack](https://www.reddit.com/r/RedditSafety/comments/oeyuom/tls_protocol_and_ciphersuite_modernization/), [launched Reddit's Tor onion service](https://www.reddit.com/r/RedditSafety/comments/yd6hqg/reddit_onion_service_launch/), [founding security](https://techcrunch.com/2022/08/17/reddit-developer-platform/) and [SRE resource](https://www.reddit.com/r/RedditEng/comments/1ka0ba7/how_we_scaled_devvit_200x_for_rfield_part_1/?share_id=ziOSz9aqoBmVkLsRLE_PO) for Devvit, [incident commanded Reddit's phishing incident](https://www.reddit.com/r/reddit/comments/10y427y/we_had_a_security_incident_heres_what_we_know/) and the [Trump 2020 vandalism incident](https://www.theverge.com/2020/8/7/21358898/reddit-subreddits-trump-communities-vandalized-compromised-moderator-accounts), and just generally been a constant face and presence for Redditors and Snoos. The team's gotten a LOT bigger since the early days, and watching Reddit grow up and dealing with product and engineering challenges has been an experience of a lifetime.
+
+## Philosophy
+
+Security is always a trade-off. There's no perfect answer. The best security? Unplug the damned thing. But humanity is going to use technology, so I see my role in this as helping to make the right decision for the right amount of security at the right time. Now, I've been in a multitude of scenarios with all kinds of risk tolerances. And I work at Reddit, so the cat memes aren't particularly life or death. Some things are more negotiable than others. The security of an individual and protecting them has been uniquely important with my time at Reddit. Doxxing or leaking geoIP data or poor security that allows a domestic partner to harass their victim is a lot higher stakes, ones I've yelled down product managers over. But other times, I've given my sage advice like a legal counsel of "ehh this might be a bad idea, bruh" and have the exact result come back to bite the business. Every scenario is different and unique.
+
+I believe that anything can be secured. I despise "Department of No"-ers, people who think good security is being a roadblock. You don't do anyone any good by just introducing friction. Everyone has a different threat model, a different risk tolerance. Making sure we're all on the same page and informed is what I want. And if I can build something really cool with you, then that's even better. I like shipping code, I like being an agent of change. I'm lucky enough that someone will pay me money to worry about security on a feature or business, so it's on me to understand how the thing works and give the best advice I can. Consequentially, I hate not knowing how something works. I'm lucky to live in a time when acquiring information is easy, I remember the late 2000s where finding SAP Security knowledge as next to impossible, you had to go find a human with a lived experience and basically apprentice under them. Nowadays, we're vibe coding shit into existence and the ability to understand "what exactly does this code do" has become so much easier that there's no excuse but time to go and seek that knowledge.
+
+## Why Securimancy?
+
+> Any sufficiently advanced technology is indistinguishable from magic.
+>
+> — Arthur C. Clarke, *Profiles of the Future* (1962)
+
+The most well known of [Arthur C. Clarke's three laws](https://en.wikipedia.org/wiki/Clarke%27s_three_laws). It applies to Security as well, take any system that is sufficiently complex and the security required to defend the thing can be akin to magic. As a long time fan of [William Gibson's Neuromancer](https://en.wikipedia.org/wiki/Neuromancer), I immediately made the connection to "securimancy" as the dark art that I practice as a career. I even liked this enough that my corporate Reddit username is [u/securimancer](https://www.reddit.com/user/securimancer/), and Slack handle *@securimancer*.
+
+And I've always been curious about the occult and counter-culture topics. Blame it on the D&D I used to do in Boy Scouts, or playing Doom at 12 years old that I got from my cousin Marty. The unknown and the mystique are pretty alluring. And so if people are going to look to me for security advice, then I'll done my wizard hat and help those with my knowledge of forbidden and arcane arts like crafting a buffer overflow, or securing a database, or how to think like a bad actor. It all seems pretty practical to me, so I focus on how I can distribute the knowledge to others so we can all tackle security problems. There's never a reason to gatekeep this knowledge, and the more points of view and varieties of thought, the more we can do together.
