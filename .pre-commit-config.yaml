@@ -29,3 +29,9 @@ repos:
         types: [file]
         files: \.(jpg|jpeg|png|gif|tiff|tif)$
         pass_filenames: true
+    -   id: cspell-markdown
+        name: Spell Check Markdown
+        entry: cspell --no-progress
+        language: node
+        types: [markdown]
+        files: \.md$

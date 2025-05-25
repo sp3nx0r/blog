@@ -16,12 +16,14 @@ clean:
 # Lint markdown files
 lint:
 	@echo "Checking markdown files..."
-	@find content -name "*.md" -exec markdownlint {} \;
+	@/usr/bin/find content -name "*.md" -exec markdownlint {} \;
+	@echo "Spell checking markdown files..."
+	@/usr/bin/find content -name "*.md" -print0 | xargs -0 cspell --no-progress
 
 # Install development dependencies
 setup:
 	@echo "Installing development dependencies..."
-	npm install -g markdownlint-cli
+	npm install -g markdownlint-cli cspell
 	pre-commit install
 
 # Create a new post

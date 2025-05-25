@@ -22,7 +22,7 @@ Googlefu yielded several candidates, and I'll talk through the rationale / evolu
 
 I initially found this keylogger as the fourth hit on Google. After quickly reviewing the code and getting familiar, this seemed like it would work for us. I particularly liked the fact this had 1) documented coded (yay) and 2) had good hooks for debugging (console writes, opening file at the end). Gave a good structure to quickly iterate through.
 
-I'll speak later about our deployment, but the main challenge with this script was the fidelity of results that it returned. In our test deployment, we observed that keypresses were being dropped and it generally gave inconsistent results. It improved as the \[cci\_powershell\]Start-Sleep -Milliseconds 40\[/cci\] timer was reduced, but Powershell CPU usage went way up (at value=1, CPU util=25%). That'd be super noticable (cue fan noise) and the accuracy of keystroke capture still wasn't high enough. So we dropped this and started looking for alternative measures.
+I'll speak later about our deployment, but the main challenge with this script was the fidelity of results that it returned. In our test deployment, we observed that key presses were being dropped and it generally gave inconsistent results. It improved as the \[cci\_powershell\]Start-Sleep -Milliseconds 40\[/cci\] timer was reduced, but Powershell CPU usage went way up (at value=1, CPU util=25%). That'd be super noticeable (cue fan noise) and the accuracy of keystroke capture still wasn't high enough. So we dropped this and started looking for alternative measures.
 
 ### Powersploit's Get-Keystrokes.ps1
 
@@ -34,7 +34,7 @@ So that took me to Powersploit's Get-Keystrokes. I've used other Powersploit mod
 
 [https://github.com/samratashok/nishang/blob/master/Gather/Keylogger.ps1](https://github.com/samratashok/nishang/blob/master/Gather/Keylogger.ps1)
 
-Alright well if Powersploit isn't going to work, let's check out the nishang option. The persistence features and web based upload are pretty cool for pentest engagements, but not necessarily needed for this endeavor. Making the modifications to bring storage back internal seemed to be more intense, so after about 5 minutes on looking at this, went back to Google for something closer to endstate (because I'm lazy).
+Alright well if Powersploit isn't going to work, let's check out the nishang option. The persistence features and web based upload are pretty cool for pentest engagements, but not necessarily needed for this endeavor. Making the modifications to bring storage back internal seemed to be more intense, so after about 5 minutes on looking at this, went back to Google for something closer to end state (because I'm lazy).
 
 ### Shima's Keylogger
 
@@ -42,14 +42,17 @@ Alright well if Powersploit isn't going to work, let's check out the nishang opt
 
 So then stumbled upon Shima's keylogger. This was succinct enough that it would do the trick! Testing this quickly showed promise, but the output file listed each character on its own line. Since English is left to right readstyle, and I really didn't want to write another script to post-process this file, I looked at options of fixing this. Output was based on:
 
+<!-- spell-checker: disable -->
 ```powershell
 Out-File -FilePath $logfile -Encoding Unicode -Append -InputObject $mychar.ToString()
 ```
+<!-- spell-checker: enable -->
 
 and there's a great argument `-NoNewline` that looked promising from [Powershell docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file?view=powershell-6). Whipped that together and deployed on the test box, but quickly was back to the drawing board because this argument is a Powershell 5.0 feature, and the target was still on 2.0.
 
 So to get around this, I figured let's just build a string buffer with the inputs and write whenever we get an enter. A bit hacky, but should work fine and writing the buffer upon carriage return to the output file will suit our needs. Not being a Powershell guru, took some time to finally identify how to flag a carriage return with the converted keystate, but after consulting an [Ascii table](https://ss64.com/ascii.html) and testing 10 (line feed) and 13 (carriage return), we had a winner. So final code looked like this:
 
+<!-- spell-checker: disable -->
 ```powershell
 function OneDriveUpdater {
     $logfile = "$env:temp\key.log"
@@ -123,6 +126,7 @@ function OneDriveUpdater {
 OneDriveUpdater
 
 ```
+<!-- spell-checker: enable -->
 
 ## Deployment
 
@@ -135,7 +139,7 @@ For the deployment mechanism, we decided upon a scheduled task because we could 
 Create a task, and this is important, make sure to run it as the user. The script has to be run in the user's context, otherwise you'll get nothing.
 
 ![Windows Task Scheduler - Create Basic Task window showing task name and description fields](images/2018-09-23_17-03-37.jpg)
-Then another thing to note is the Action, we'll kick powershell.exe but adding the flag `-WindowStyle Hidden`, which will result in a quick flicker of a powershell window but will quickly disappear. So either kick it off when the user isn't around (afterhours) or make it a plausible looking script. We hijacked a current IT rollout to masquerade the script so it didn't arouse too much suspicion.
+Then another thing to note is the Action, we'll kick powershell.exe but adding the flag `-WindowStyle Hidden`, which will result in a quick flicker of a powershell window but will quickly disappear. So either kick it off when the user isn't around (after hours) or make it a plausible looking script. We hijacked a current IT rollout to masquerade the script so it didn't arouse too much suspicion.
 
 ![Windows Task Scheduler - New Action window showing PowerShell command configuration](images/2018-09-23_17-04-22.jpg)
 
@@ -145,4 +149,4 @@ One final note is that we went with a network share location to store the files,
 
 ### Conclusion
 
-So that's about a wrap. Was a useful exercise for us, got me more familiar with keylogger options on the cheap, since we don't own a product that would do this for us.  And I wasn't really in the mood to download an _insert nation-state here_ backdoored keylogger. Anyway, hope this helped. Enjoy
+So that's about a wrap. Was a useful exercise for us, got me more familiar with keylogger options on the cheap, since we don't own a product that would do this for us.  And I wasn't really in the mood to download an _insert nation-state here_ backdoor'd keylogger. Anyway, hope this helped. Enjoy

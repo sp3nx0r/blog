@@ -1,0 +1,82 @@
+---
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+language: en
+files:
+  - "**/*.md"
+version: '0.2'
+useGitignore: true
+enableFiletypes:
+  - markdown
+ignorePaths:
+  - node_modules/**
+  - public/**
+  - resources/**
+  - themes/**
+  - static/**
+ignoreWords:
+  - altazvalani
+  - brewski
+  - bruteforce
+  - burpsuite
+  - cewl
+  - cheatsheet
+  - creds
+  - daemonized
+  - didier
+  - dirb
+  - dirbuster
+  - dockerizing
+  - ecryptfs
+  - enduser
+  - esedbexport
+  - googlefu
+  - hackthebox
+  - hashcat
+  - hashview
+  - hitlist
+  - homelab
+  - houseccon
+  - impacket
+  - infosec
+  - keylogger
+  - keyloggers
+  - keystate
+  - lowerport
+  - mastadon
+  - mountpoint
+  - nishang
+  - nmap
+  - nsakey
+  - ntds
+  - ntdsxtract
+  - obfs
+  - offensivesec
+  - OSCP
+  - peasey
+  - pentest
+  - phwinter
+  - powersploit
+  - quadro
+  - readstyle
+  - redteam
+  - rockyou
+  - secretsdump
+  - shel
+  - shellntel
+  - shellshock
+  - shima
+  - slideshare
+  - sploit
+  - torproject
+  - unifi
+  - upperport
+  - wfuzz
+  - wordlist
+  - wordlists
+  - writeups
+  - torrc
+  - tord
+  - localtime
+  - jessfraz
+  - shuf
+  - chriswayg
