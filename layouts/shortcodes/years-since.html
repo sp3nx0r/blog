@@ -1,0 +1,9 @@
+{{ $startDate := time (.Get 0) }}
+{{ $diff := sub now.Unix $startDate.Unix }}
+{{ $years := div $diff 31536000 | math.Floor }}
+{{ $decimalPart := div (mod $diff 31536000) 31536000 }}
+{{ if ge $decimalPart 0.5 }}
+{{ $years }} and a half
+{{ else }}
+{{ $years }}
+{{ end }}

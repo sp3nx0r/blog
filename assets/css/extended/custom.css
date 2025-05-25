@@ -25,3 +25,22 @@
     max-height: none !important;
     overflow: visible !important;
 }
+
+.profile .profile_inner span p {
+    margin-bottom: 1.5em;
+}
+
+.profile .profile_inner span p:last-child {
+    margin-bottom: 0;
+}
+
+.profile .profile_inner span a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.profile .profile_inner span a:hover {
+    opacity: 0.8;
+}
