@@ -1,0 +1,31 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+        args: [--maxkb=2048]
+
+-   repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.45.0
+    hooks:
+    -   id: markdownlint
+        args: [--config=.markdownlint.yaml]
+
+-   repo: local
+    hooks:
+    -   id: hugo-build
+        name: Hugo Build
+        entry: hugo build
+        language: system
+        types: [file]
+        pass_filenames: false
+    -   id: strip-gps-metadata
+        name: Strip GPS Metadata
+        entry: exiftool -GPS:all= -overwrite_original
+        language: system
+        types: [file]
+        files: \.(jpg|jpeg|png|gif|tiff|tif)$
+        pass_filenames: true
