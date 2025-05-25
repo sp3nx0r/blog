@@ -20,17 +20,13 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
-
-      - name: Check
-        run: hugo check
-
       - name: Build
         run: hugo --minify
 
       - name: Lint
         run: |
-          npm install -g markdownlint-cli
-          find content -name "*.md" -exec markdownlint {} \;
+          make setup
+          make lint
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
