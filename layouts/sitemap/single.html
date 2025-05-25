@@ -1,0 +1,80 @@
+{{- define "main" -}}
+
+<style>
+.sitemapDiv {
+    max-width: var(--main-width);
+    margin: var(--gap) auto;
+    padding: var(--gap);
+    color: var(--content);
+}
+
+.sitemapDiv h1 {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: var(--content-gap);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.sitemapDiv h2 {
+    font-size: 24px;
+    color: var(--primary);
+    margin: var(--content-gap) 0 1rem;
+}
+
+.sitemapDiv ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemapDiv li {
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: transform 0.1s;
+}
+
+.sitemapDiv li:hover {
+    background: var(--code-bg);
+}
+
+.sitemapDiv a {
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: 0 1px 0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.sitemapDiv a:hover {
+    color: var(--secondary);
+}
+
+.sitemapDiv .description {
+    display: block;
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 0.3rem;
+}
+</style>
+
+<div class="sitemapDiv">
+    <h1>Sitemap</h1>
+    <h2>Main pages</h2>
+    <ul>
+        <li><a href="{{ site.BaseURL }}">Home page</a></li>
+        <li><a href="{{ site.BaseURL }}about/">About us</a></li>
+        <li><a href="{{ site.BaseURL }}search/">Search</a></li>
+    </ul>
+    <h2>Posts</h2>
+    <ul>
+        {{- range where site.RegularPages "Type" "posts" -}}
+        <li><strong><a href="{{ .Permalink }}">{{ .Title | .Page.RenderString }}</a></strong><br />
+            <span class="description">{{ .Description | .Page.RenderString }}</span>
+        </li>
+        {{- end -}}
+    </ul>
+</div>
+
+{{- end -}}
