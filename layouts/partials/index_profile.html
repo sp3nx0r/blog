@@ -1,0 +1,62 @@
+<div class="profile">
+    {{- with site.Params.profileMode }}
+    <div class="profile_inner">
+        {{- if .imageUrl -}}
+        {{- $img := "" }}
+        {{- if not (urls.Parse .imageUrl).IsAbs }}
+        {{- $img = resources.Get .imageUrl }}
+        {{- end }}
+        {{- if $img }}
+        {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+        {{- if hugo.IsExtended -}}
+        {{- $processableFormats = $processableFormats | append "webp" -}}
+        {{- end -}}
+        {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+        {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+        {{- if (not (and (not .imageHeight) (not .imageWidth))) }}
+        {{- $img = $img.Resize (printf "%dx%d" .imageWidth .imageHeight) }}
+        {{- else if .imageHeight }}
+        {{- $img = $img.Resize (printf "x%d" .imageHeight) }}
+        {{ else if .imageWidth }}
+        {{- $img = $img.Resize (printf "%dx" .imageWidth) }}
+        {{ else }}
+        {{- $img = $img.Resize "150x150" }}
+        {{- end }}
+        {{- end }}
+        <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default " profile image" }}"
+            title="{{ .imageTitle }}" height="{{ .imageHeight | default 150 }}"
+            width="{{ .imageWidth | default 150 }}" />
+        {{- else }}
+        <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default " profile image" }}"
+            title="{{ .imageTitle }}" height="{{ .imageHeight | default 150 }}"
+            width="{{ .imageWidth | default 150 }}" />
+        {{- end }}
+        {{- end }}
+        <h1>{{ .title | default site.Title | markdownify }}</h1>
+        <span style="text-align: left;">{{ .subtitle | markdownify }}</span>
+
+        <!-- Add the top three most recent posts to the home page, and link to Archives after that -->
+        {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        <div class="recent-posts" style="margin-top: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">Recent Posts</h2>
+            {{- range first 3 $pages }}
+            <article class="post-entry" onclick="window.location='{{ .Permalink }}';" style="cursor: pointer;">
+                <h3 style="text-align: left;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <div class="entry-content" style="text-align: left;">
+                    {{ .Summary }}
+                </div>
+                <div class="entry-date" style="font-size: 0.9em; text-align: left; color: #666;">
+                    <time>{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ if .ReadingTime }} · {{ .ReadingTime }} min read{{ end }}
+                    {{ if .Params.author }} · {{ .Params.author }}{{ end }}
+                </div>
+            </article>
+            {{- end }}
+            <div class="see-all-posts">
+                <a href="/archives/" class="button">
+                    See Older Posts
+                </a>
+            </div>
+        </div>
+    {{- end}}
+</div>

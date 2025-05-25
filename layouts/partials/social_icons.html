@@ -1,0 +1,8 @@
+<div class="social-icons" style="padding: 0px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 100%;">
+    {{- range . }}
+    <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | title }}"
+        style="border-bottom: none;">
+        {{ partial "svg.html" . }}
+    </a>
+    {{- end }}
+</div>

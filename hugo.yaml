@@ -1,0 +1,111 @@
+baseURL: 'https://www.securimancy.com/'
+languageCode: 'en-us'
+title: 'Securimancy'
+description: "Security-focused engineering and homelab adventures"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+enableEmoji: true
+enableGitInfo: true
+
+params:
+  env: production
+  defaultTheme: "auto"
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowFontAwesome: true
+  ShowToc: false
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowDateOnPost: true
+  ShowReadingTimeOnPost: true
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: true
+  description: "Security-focused engineering and homelab adventures"
+  author: "Spencer Koch"
+  logo: "/images/magic-circle.jpg"
+
+  fuseOpts:
+    ignoreLocation: true
+    isCaseSensitive: false
+    shouldSort: true
+    keys: ["title", "permalink", "summary", "content"]
+
+  profileMode:
+    enabled: true
+    title: "Spencer Koch"
+    subtitle: "{{< profile-subtitle >}}"
+    imageUrl: "/images/profile.jpeg"
+    imageTitle: "Spencer Koch"
+    imageLink: ""
+
+  socialIcons:
+    - name: "Reddit"
+      url: "https://reddit.com/user/securimancer"
+      icon: "fab fa-reddit"
+    - name: "Bluesky"
+      url: "https://bsky.app/profile/securimancy.com"
+      icon: "fab fa-bluesky"
+    - name: "Twitter"
+      url: "https://twitter.com/sp3nx0r"
+      icon: "fab fa-twitter"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/spencer-w-koch/"
+      icon: "fab fa-linkedin"
+    - name: "Keybase"
+      url: "https://keybase.io/sp3nx0r"
+      icon: "fab fa-keybase"
+    - name: Github
+      url: "https://github.com/sp3nx0r"
+      icon: "fab fa-github"
+
+  assets:
+    disableHLJS: false
+
+markup:
+  highlight:
+    style: dracula
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+  goldmark:
+    renderer:
+      unsafe: true
+
+frontmatter:
+  date: ["date", "publishDate", "lastmod"]
+  lastmod: ["lastmod", ":git", "date", "publishDate"]
+  publishDate: ["publishDate", "date"]
+  expiryDate: ["expiryDate"]
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+menu:
+  main:
+    - identifier: "archives"
+      name: "Archives"
+      url: "/archives/"
+      weight: 1
+    - identifier: "search"
+      name: "Search"
+      url: "/search/"
+      weight: 2
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 3
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+privacy:
+  twitter:
+    disabled: true
