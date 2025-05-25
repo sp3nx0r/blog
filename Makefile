@@ -24,7 +24,6 @@ lint:
 setup:
 	@echo "Installing development dependencies..."
 	npm install -g markdownlint-cli cspell
-	pre-commit install
 
 # Create a new post
 new-post:
