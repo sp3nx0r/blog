@@ -13,6 +13,7 @@ ignorePaths:
   - resources/**
   - themes/**
   - static/**
+  - LICENSE.md
 ignoreWords:
   - altazvalani
   - brewski
