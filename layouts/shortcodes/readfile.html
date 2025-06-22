@@ -1,0 +1,7 @@
+{{- $path := .Get "path" -}}
+{{- if $path -}}
+  {{- $content := readFile $path -}}
+  {{- $content | safeHTML -}}
+{{- else -}}
+  {{- errorf "readfile shortcode: path parameter is required" -}}
+{{- end -}}
