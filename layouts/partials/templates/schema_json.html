@@ -1,0 +1,38 @@
+{{- $scratch := newScratch }}
+
+{{- $scratch.Set "wordCount" .WordCount -}}
+{{- if .Params.wordCount -}}
+  {{- $scratch.Set "wordCount" .Params.wordCount -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ .Title | jsonify }},
+    "description": {{ .Description | jsonify }},
+    "image": {{ .Params.cover.image | default .Params.cover | default site.Params.images | jsonify }},
+    "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+    "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+    "author": {
+        "@type": "Person",
+        "name": {{ .Params.author | default site.Params.author | jsonify }},
+        "url": {{ .Params.authorUrl | default site.Params.authorUrl | jsonify }}
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": {{ site.Title | jsonify }},
+        "logo": {
+            "@type": "ImageObject",
+            "url": {{ site.Params.logo | absURL | jsonify }}
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ .Permalink | jsonify }}
+    },
+    "wordCount": "{{ $scratch.Get "wordCount" }}",
+    "articleSection": {{ .Section | jsonify }},
+    "keywords": {{ .Params.tags | jsonify }}
+}
+</script>
