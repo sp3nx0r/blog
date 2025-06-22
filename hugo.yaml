@@ -21,7 +21,7 @@ params:
   ShowDateOnPost: true
   ShowReadingTimeOnPost: true
   ShowCodeCopyButtons: true
-  ShowAllPagesInArchive: true
+  ShowAllPagesInArchive: false
   description: "Security-focused engineering and homelab adventures"
   author: "Spencer Koch"
   logo: "/images/magic-circle.jpg"
