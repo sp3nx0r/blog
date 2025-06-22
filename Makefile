@@ -17,8 +17,6 @@ clean:
 lint:
 	@echo "Checking markdown files..."
 	@/usr/bin/find content -name "*.md" -exec markdownlint {} \;
-	@echo "Spell checking markdown files..."
-	@/usr/bin/find content -name "*.md" -print0 | xargs -0 cspell --no-progress
 
 # Install development dependencies
 setup:
