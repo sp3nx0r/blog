@@ -44,3 +44,21 @@
 .profile .profile_inner span a:hover {
     opacity: 0.8;
 }
+
+/* Callout styles for dark mode compatibility */
+.dark .callout {
+    background: var(--entry) !important;
+    border-color: var(--primary) !important;
+}
+
+.dark .callout[style*="background: #f0f9ff"] {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark .callout[style*="background: #fef3c7"] {
+    background: rgba(245, 158, 11, 0.1) !important;
+}
+
+.dark .callout[style*="background: #fef2f2"] {
+    background: rgba(239, 68, 68, 0.1) !important;
+}

@@ -1,0 +1,67 @@
+{{ $type := .Get "type" | default "note" }}
+{{ $title := .Get "title" | default (title $type) }}
+{{ $icon := .Get "icon" | default "info-circle" }}
+
+{{ $bgColor := "var(--code-bg)" }}
+{{ $borderColor := "var(--primary)" }}
+{{ $iconColor := "var(--primary)" }}
+
+{{ if eq $type "tip" }}
+  {{ $bgColor = "#f0f9ff" }}
+  {{ $borderColor = "#0ea5e9" }}
+  {{ $iconColor = "#0ea5e9" }}
+  {{ $icon = "lightbulb" }}
+{{ else if eq $type "warning" }}
+  {{ $bgColor = "#fef3c7" }}
+  {{ $borderColor = "#f59e0b" }}
+  {{ $iconColor = "#f59e0b" }}
+  {{ $icon = "exclamation-triangle" }}
+{{ else if eq $type "danger" }}
+  {{ $bgColor = "#fef2f2" }}
+  {{ $borderColor = "#ef4444" }}
+  {{ $iconColor = "#ef4444" }}
+  {{ $icon = "times-circle" }}
+{{ else if eq $type "note" }}
+  {{ $bgColor = "#f0f9ff" }}
+  {{ $borderColor = "#3b82f6" }}
+  {{ $iconColor = "#3b82f6" }}
+  {{ $icon = "info-circle" }}
+{{ end }}
+
+<div class="callout" style="
+  background: {{ $bgColor }};
+  border-left: 4px solid {{ $borderColor }};
+  border-radius: 6px;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+">
+  <div style="
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: {{ $iconColor }};
+  ">
+    <svg style="
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: currentColor;
+    " viewBox="0 0 24 24">
+      {{ if eq $icon "lightbulb" }}
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zM9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1z"/>
+      {{ else if eq $icon "exclamation-triangle" }}
+        <path d="M12 2L1 21h22L12 2zm0 3.17L19.83 19H4.17L12 5.17zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+      {{ else if eq $icon "times-circle" }}
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+      {{ else }}
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      {{ end }}
+    </svg>
+    {{ $title }}
+  </div>
+  <div style="color: var(--content);">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
