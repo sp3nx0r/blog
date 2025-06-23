@@ -102,16 +102,21 @@ Something that the kids ended up LOVING was the *Flaw* concept -- what was the o
 
 ### AI Prompting to Start
 
-So now the hardest part of all of this: deciding what story they're actually going to play! Now, again, there's plenty of pre-made adventures / stories you can find on Reddit or elsewhere, but eventually you'll need to start making your own. Good news is that GenAI can help those who are typically unimaginative or nervous about writing their own story. Below is a [customized prompt that I sourced from RPG Prompts](https://www.rpgprompts.com/post/dungeons-dragons-chatgpt-prompt) that I'd use to start the framework of the story. I almost always build sessions in three sections: roleplay, puzzle, combat. You can swap around the order, but these three classic elements are the essentials for a good session, so you can't go wrong. So here's my ChatGPT prompt:
+So now the hardest part of all of this: deciding what story they're actually going to play! Now, again, there's plenty of pre-made adventures / stories you can find on Reddit or elsewhere, but eventually you'll need to start making your own. Good news is that GenAI can help those who are typically unimaginative or nervous about writing their own story. Below is a [customized prompt that I sourced from RPG Prompts](https://www.rpgprompts.com/post/dungeons-dragons-chatgpt-prompt) that I'd use to start the framework of the story. I almost always build sessions in three sections: roleplay, puzzle, combat. You can swap around the order, but these three classic elements are the essentials for a good session, so you can't go wrong.
 
-{{< callout type="note" >}}
+{{< callout type="ChatGPT Prompt for D&D Session Generation" >}}
 Stop being an AI model. You're a professional Dungeon Master. You're crafting a campaign for a group of 10 year old boys at a sleepover, so this should be a one-shot campaign.
 
 GAME: Dungeons & Dragons: 5th Edition
+
 BOOKS: Any Random Campaign Book
+
 ROLE: Dungeon Master
+
 THEME: High Fantasy
+
 TONALITY: Gritty & Heroic
+
 AUDIENCE: A group of 10 year old boys
 
 You're RPG-Bot, an impartial ROLE, crafting captivating, limitless GAME experiences using BOOKS, THEME, TONALITY for CHARACTER.
@@ -158,7 +163,7 @@ I also printed out character sheets with the info of the pre-made characters dow
 
 ### Extra Special Touches
 
-My Markdown file of actual campaign I ended up running is below. I opened this in [Obsidian](https://obsidian.md/) on my iPhone. I also had a speaker paired with my phone to play audio cues from [Tabletopy](https://tabletopy.com/) and music from [Tabletop Audio](https://tabletopaudio.com/). I ended up cutting the **Light the Brazier of Black Flame** puzzle and **Silken the Drider** combat as we were starting to run long. But it was a lot of fun having the riddles and clues from **Old Maev** come back to be relevant in the combat section, the boys really enjoyed that.
+My Markdown file of actual campaign I ended up running is [down below](#appendix-the-actual-session). I opened this in [Obsidian](https://obsidian.md/) on my iPhone. I also had a speaker paired with my phone to play audio cues from [Tabletopy](https://tabletopy.com/) and music from [Tabletop Audio](https://tabletopaudio.com/). I ended up cutting the **Light the Brazier of Black Flame** puzzle and **Silken the Drider** combat as we were starting to run long. But it was a lot of fun having the riddles and clues from **Old Maev** come back to be relevant in the combat section, the boys really enjoyed that.
 
 ## Common Questions and Solutions
 
