@@ -6,7 +6,6 @@ draft: false
 date: 2025-06-22T12:45:41-05:00
 creationDate: 2025-06-21T08:04:41-05:00
 url: "/ttrpgs-for-kids"
-weight: 1
 tags: ["TTRPG", "D&D", "parenting", "gaming", "family", "tabletop-games", "roleplaying"]
 showToc: true
 tocOpen: false
