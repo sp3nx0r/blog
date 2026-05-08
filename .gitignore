@@ -21,3 +21,9 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# placeholder images directory
+static/images/unused/
+static/images/unused/*
+
+TODO.md
