@@ -1,4 +1,4 @@
-{{- $scratch := newScratch }}
+{{- $scratch := collections.NewScratch }}
 
 {{- $scratch.Set "wordCount" .WordCount -}}
 {{- if .Params.wordCount -}}

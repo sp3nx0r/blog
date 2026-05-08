@@ -16,6 +16,7 @@ params:
   ShowFontAwesome: true
   ShowToc: false
   TocOpen: false
+  UseHugoToc: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowDateOnPost: true

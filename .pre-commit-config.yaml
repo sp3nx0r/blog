@@ -13,6 +13,7 @@ repos:
     hooks:
     -   id: markdownlint
         args: [--config=.markdownlint.yaml]
+        language_version: system
 
 -   repo: local
     hooks:
@@ -33,5 +34,6 @@ repos:
         name: Spell Check Markdown
         entry: cspell --no-progress
         language: node
+        language_version: system
         types: [markdown]
         files: \.md$

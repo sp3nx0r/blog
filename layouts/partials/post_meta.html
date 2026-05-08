@@ -1,4 +1,4 @@
-{{- $scratch := newScratch }}
+{{- $scratch := collections.NewScratch }}
 
 {{- if not .Date.IsZero -}}
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
