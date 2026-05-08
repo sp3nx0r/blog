@@ -202,21 +202,8 @@ Remember: You're not just running a game; you're building a foundation for creat
 
 ## Appendix: Character Sheets
 
-{{< details >}}
-<div style="width:100%; height:700px; margin-bottom:1em;">
-  <iframe
-    src="/ttrpgs-for-kids/character-sheets.pdf"
-    width="100%"
-    height="100%"
-    style="border: none;"
-    allowfullscreen
-  >
-    This browser does not support PDFs. Please download the PDF to view it:
-    <a href="character-sheets.pdf">Download PDF</a>
-  </iframe>
-</div>
-
-<p>
-  <a href="character-sheets.pdf" target="_blank" rel="noopener">Download the Character Sheets as PDF</a>
-</p>
-{{< /details >}}
+<object data="character-sheets.pdf" type="application/pdf" width="100%" height="700px">
+  <p>Your browser does not support inline PDFs.
+    <a href="character-sheets.pdf" target="_blank" rel="noopener">Download the Character Sheets as PDF</a>
+  </p>
+</object>
