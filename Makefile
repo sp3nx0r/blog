@@ -21,7 +21,7 @@ lint:
 # Install development dependencies
 setup:
 	@echo "Installing development dependencies..."
-	npm install -g markdownlint-cli cspell
+	npm install -g markdownlint-cli
 
 # Create a new post
 new-post:
