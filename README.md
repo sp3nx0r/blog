@@ -39,7 +39,6 @@ The repo uses [pre-commit](https://pre-commit.com/) hooks for:
 - YAML validation
 - Large file checks (>2 MB)
 - Markdown linting (`markdownlint`)
-- Spell checking (`cspell`)
 - GPS metadata stripping from images (`exiftool`)
 - Hugo build verification
 
