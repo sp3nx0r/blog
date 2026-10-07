@@ -84,12 +84,13 @@
 .callout-danger { background: #fef2f2; border-color: #ef4444; }
 .callout-danger .callout-header { color: #ef4444; }
 
-/* Dark mode: subtle tinted backgrounds + brighter accents. */
-.dark .callout-note { background: rgba(59, 130, 246, 0.1); border-color: #60a5fa; }
-.dark .callout-note .callout-header { color: #60a5fa; }
-.dark .callout-tip { background: rgba(56, 189, 248, 0.1); border-color: #38bdf8; }
-.dark .callout-tip .callout-header { color: #38bdf8; }
-.dark .callout-warning { background: rgba(245, 158, 11, 0.1); border-color: #fbbf24; }
-.dark .callout-warning .callout-header { color: #fbbf24; }
-.dark .callout-danger { background: rgba(239, 68, 68, 0.1); border-color: #f87171; }
-.dark .callout-danger .callout-header { color: #f87171; }
+/* Dark mode: subtle tinted backgrounds + brighter accents.
+   PaperMod keys dark mode off <html data-theme="dark">, not a .dark class. */
+[data-theme="dark"] .callout-note { background: rgba(59, 130, 246, 0.1); border-color: #60a5fa; }
+[data-theme="dark"] .callout-note .callout-header { color: #60a5fa; }
+[data-theme="dark"] .callout-tip { background: rgba(56, 189, 248, 0.1); border-color: #38bdf8; }
+[data-theme="dark"] .callout-tip .callout-header { color: #38bdf8; }
+[data-theme="dark"] .callout-warning { background: rgba(245, 158, 11, 0.1); border-color: #fbbf24; }
+[data-theme="dark"] .callout-warning .callout-header { color: #fbbf24; }
+[data-theme="dark"] .callout-danger { background: rgba(239, 68, 68, 0.1); border-color: #f87171; }
+[data-theme="dark"] .callout-danger .callout-header { color: #f87171; }
