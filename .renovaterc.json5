@@ -1,0 +1,34 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:recommended",
+    ":semanticCommits", // repo uses Conventional Commits
+    ":enablePreCommit", // track .pre-commit-config.yaml hook revs
+  ],
+  schedule: ["every weekend"],
+  dependencyDashboard: true,
+  // Keep the vendored PaperMod theme submodule up to date (disabled by default).
+  "git-submodules": {
+    enabled: true,
+  },
+  customManagers: [
+    {
+      // CI installs Hugo Extended from a pinned .deb via this env var; track it
+      // against gohugoio/hugo releases (tags are vX.Y.Z; the file holds X.Y.Z).
+      customType: "regex",
+      managerFilePatterns: ["/^\\.github/workflows/hugo\\.yml$/"],
+      matchStrings: ["HUGO_VERSION:\\s*(?<currentValue>\\S+)"],
+      datasourceTemplate: "github-releases",
+      depNameTemplate: "gohugoio/hugo",
+      extractVersionTemplate: "^v(?<version>.+)$",
+      versioningTemplate: "semver",
+    },
+  ],
+  packageRules: [
+    {
+      description: "Group GitHub Actions updates into a single PR",
+      matchManagers: ["github-actions"],
+      groupName: "github-actions",
+    },
+  ],
+}
