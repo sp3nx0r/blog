@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     env:
-      HUGO_VERSION: 0.161.1
+      HUGO_VERSION: 0.167.0
       HUGO_ENVIRONMENT: production
       TZ: America/Chicago
     steps:

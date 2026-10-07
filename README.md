@@ -6,7 +6,7 @@ Built with [Hugo](https://gohugo.io/) using the [PaperMod](https://github.com/ad
 
 ## Local Development
 
-Prerequisites: [Hugo Extended](https://gohugo.io/installation/) (v0.147.8+), Node.js (for linting tools).
+Prerequisites: [Hugo Extended](https://gohugo.io/installation/) (v0.167.0+, matching CI), Node.js (for linting tools).
 
 ```bash
 # Install lint/spell-check tooling
