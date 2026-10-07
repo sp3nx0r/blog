@@ -2,6 +2,8 @@
 title: "Practical Application of a Password Cracking Rig"
 date: 2017-05-21
 url: "/practical-application-of-a-password-cracking-rig"
+summary: "Building a single-GPU password-cracking rig on a repurposed NVIDIA Quadro K5000 — eCryptfs encryption, system hardening, Hashcat vs. John the Ripper benchmarks, and running Hashview."
+description: "Building a single-GPU password-cracking rig on a repurposed NVIDIA Quadro K5000 — eCryptfs encryption, system hardening, Hashcat vs. John the Ripper benchmarks, and running Hashview."
 tags: ["security", "password-cracking", "hashcat", "hashview", "nvidia", "gpu", "forensics", "ntds", "active-directory", "infosec"]
 ---
 

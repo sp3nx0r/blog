@@ -6,7 +6,7 @@ draft: false
 date: 2025-06-22T12:45:41-05:00
 creationDate: 2025-06-21T08:04:41-05:00
 url: "/ttrpgs-for-kids"
-tags: ["TTRPG", "D&D", "parenting", "gaming", "family", "tabletop-games", "roleplaying"]
+tags: ["TTRPG", "DnD", "parenting", "gaming", "family", "tabletop-games", "roleplaying"]
 showToc: true
 tocOpen: false
 # wordCount manually calculated since we're referencing the appendix.md which bloats the time
