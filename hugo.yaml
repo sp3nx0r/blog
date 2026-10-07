@@ -64,7 +64,7 @@ params:
       url: "https://twitter.com/sp3nx0r"
       icon: "fab fa-twitter"
     - name: "LinkedIn"
-      url: "https://www.linkedin.com/in/spencer-w-koch/"
+      url: "https://www.linkedin.com/in/spencerwkoch/"
       icon: "fab fa-linkedin"
     - name: "Keybase"
       url: "https://keybase.io/sp3nx0r"
