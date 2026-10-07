@@ -2,6 +2,8 @@
 title: "Shocker - Hack The Box writeup"
 date: 2018-02-17
 url: "/shocker-hack-the-box-writeup"
+summary: "A Hack The Box writeup for the retired Shocker machine: enumerating the Apache /cgi-bin endpoint with wfuzz and exploiting Shellshock for a reverse shell, then escalating to root."
+description: "A Hack The Box writeup for the retired Shocker machine: enumerating the Apache /cgi-bin endpoint with wfuzz and exploiting Shellshock for a reverse shell, then escalating to root."
 tags:
   - "hackthebox"
   - "pentest"
