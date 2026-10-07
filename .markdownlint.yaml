@@ -2,6 +2,9 @@ default: true
 MD013: false
 MD033: false
 MD041: false
+# MD060 (table-column-style) added in markdownlint v0.45+; opinionated about
+# table pipe spacing/alignment. Disabled to match existing content style.
+MD060: false
 MD024:
   siblings_only: true
 MD025:
