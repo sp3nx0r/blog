@@ -106,10 +106,10 @@ taxonomies:
 # "noindex, nofollow" when robotsNoIndex is set. They are also excluded from
 # sitemap.xml (see layouts/sitemap.xml).
 cascade:
-  - _target:
+  - target:
       kind: taxonomy
     robotsNoIndex: true
-  - _target:
+  - target:
       kind: term
     robotsNoIndex: true
 
