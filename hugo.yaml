@@ -32,8 +32,11 @@ params:
     - posts
 
   # Default social-share image for pages without a cover (e.g. the homepage).
+  # 1200x630 (1.91:1) is the canonical Open Graph / Twitter card size.
+  # static/images/og-card.png is currently a PLACEHOLDER — replace the file
+  # with the final branded artwork (no config change needed).
   images:
-    - "/android-chrome-512x512.png"
+    - "/images/og-card.png"
 
   # Enables twitter:site/creator on Twitter cards.
   social:
