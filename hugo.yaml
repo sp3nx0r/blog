@@ -1,5 +1,5 @@
 baseURL: 'https://www.securimancy.com/'
-languageCode: 'en-us'
+locale: 'en-us'
 title: 'Securimancy'
 description: "Security-focused engineering and homelab adventures"
 theme: "PaperMod"
