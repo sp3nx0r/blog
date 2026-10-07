@@ -27,6 +27,18 @@ params:
   author: "Spencer Koch"
   logo: "/images/magic-circle.jpg"
 
+  # Explicitly scope "posts" as the main section (home list, archives, nav).
+  mainSections:
+    - posts
+
+  # Default social-share image for pages without a cover (e.g. the homepage).
+  images:
+    - "/android-chrome-512x512.png"
+
+  # Enables twitter:site/creator on Twitter cards.
+  social:
+    twitter: "sp3nx0r"
+
   fuseOpts:
     ignoreLocation: true
     isCaseSensitive: false
