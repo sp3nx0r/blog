@@ -37,7 +37,7 @@
                 <div class="entry-content" style="text-align: left;">
                     {{ .Summary }}
                 </div>
-                <div class="entry-date" style="font-size: 0.9em; text-align: left; color: #666;">
+                <div class="entry-date" style="font-size: 0.9em; text-align: left; color: var(--secondary);">
                     <time>{{ .Date.Format "January 2, 2006" }}</time>
                     {{ if .ReadingTime }} · {{ .ReadingTime }} min read{{ end }}
                     {{ if .Params.author }} · {{ .Params.author }}{{ end }}
