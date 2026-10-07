@@ -89,6 +89,18 @@ taxonomies:
   tag: "tags"
   category: "categories"
 
+# Taxonomy (tag/category) and term pages are thin content; keep them crawlable
+# for internal links but out of the index. PaperMod's head.html emits
+# "noindex, nofollow" when robotsNoIndex is set. They are also excluded from
+# sitemap.xml (see layouts/sitemap.xml).
+cascade:
+  - _target:
+      kind: taxonomy
+    robotsNoIndex: true
+  - _target:
+      kind: term
+    robotsNoIndex: true
+
 menu:
   main:
     - identifier: "archives"
